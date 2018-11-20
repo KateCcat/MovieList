@@ -8,24 +8,23 @@
 
 import Foundation
 
-struct MovieInfo : Codable {
-    
-    let adult : Bool?
-    let backdropPath : String?
-    var genreIds : [Int] = []
-    let id : Int?
-    let originalLanguage : String?
-    let originalTitle : String?
-    let overview : String?
-    let popularity : Float?
-    let posterPath : String?
-    let releaseDate : String?
-    let title : String?
-    var video : Bool = false
-    let voteAverage : Float?
-    let voteCount : Int?
-    
-    
+struct MovieInfo: Codable, Equatable {
+
+    let adult: Bool?
+    let backdropPath: String?
+    var genreIds: [Int] = []
+    let id: Int?
+    let originalLanguage: String?
+    let originalTitle: String?
+    let overview: String?
+    let popularity: Float?
+    let posterPath: String?
+    let releaseDate: String?
+    let title: String?
+    var video: Bool = false
+    let voteAverage: Float?
+    let voteCount: Int?
+
     enum CodingKeys: String, CodingKey {
         case adult = "adult"
         case backdropPath = "backdrop_path"
@@ -42,7 +41,7 @@ struct MovieInfo : Codable {
         case voteAverage = "vote_average"
         case voteCount = "vote_count"
     }
-    
+
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         adult = try values.decodeIfPresent(Bool.self, forKey: .adult)

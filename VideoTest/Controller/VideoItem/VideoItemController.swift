@@ -9,19 +9,19 @@
 import UIKit
 
 class VideoItemController: UIViewController {
-    
+
     @IBOutlet var posterImageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var overviewLabel: UILabel!
     @IBOutlet var ratingView: RatingView!
     var movieInfo: MovieInfo!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Movie"
         setupUI()
     }
-    
+
     func setupUI() {
         titleLabel.text = movieInfo.title
         overviewLabel.text = movieInfo.overview
@@ -29,15 +29,10 @@ class VideoItemController: UIViewController {
             let ratingInt = Int(rating)
             ratingView.ratingInt = ratingInt
         }
-        
         if let urlString = movieInfo.posterPath, let url = URL(string: "\(Constant.imageUrl)\(urlString)") {
             posterImageView.kf.setImage(with: url, placeholder: UIImage(named: "placeholder"))
-        }
-        else {
+        } else {
             posterImageView.image = nil
         }
     }
 }
-
-
-

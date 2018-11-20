@@ -9,6 +9,6 @@
 import Foundation
 
 enum Constant {
-    
+
         static let imageUrl = "https://image.tmdb.org/t/p/w500/"
 }

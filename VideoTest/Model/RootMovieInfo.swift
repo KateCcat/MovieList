@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct RootMovieInfo : Codable {
-    
-    let page : Int?
-    let results : [MovieInfo]?
-    let totalPages : Int?
-    let totalResults : Int?
-    
+struct RootMovieInfo: Codable {
+
+    let page: Int?
+    let results: [MovieInfo]?
+    let totalPages: Int?
+    let totalResults: Int?
+
     enum CodingKeys: String, CodingKey {
         case page = "page"
         case results = "results"

@@ -29,6 +29,8 @@
 		FA7D5F75215B710C00F68F44 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7D5F74215B710C00F68F44 /* ApiManager.swift */; };
 		FA7D5F79215B72C900F68F44 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7D5F78215B72C900F68F44 /* DataManager.swift */; };
 		FA7EE1EA218D517A0037CE3F /* RootMovieInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7EE1E9218D517A0037CE3F /* RootMovieInfo.swift */; };
+		FAC1386021A42F3800CF9E63 /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1385E21A42F3800CF9E63 /* LoadingCell.swift */; };
+		FAC1386121A42F3800CF9E63 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC1385F21A42F3800CF9E63 /* LoadingCell.xib */; };
 		FACB1BE0218C663F0080DE07 /* MovieInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACB1BDF218C663F0080DE07 /* MovieInfo.swift */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +86,8 @@
 		FA7D5F74215B710C00F68F44 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		FA7D5F78215B72C900F68F44 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		FA7EE1E9218D517A0037CE3F /* RootMovieInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootMovieInfo.swift; sourceTree = "<group>"; };
+		FAC1385E21A42F3800CF9E63 /* LoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
+		FAC1385F21A42F3800CF9E63 /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 		FACB1BDF218C663F0080DE07 /* MovieInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -187,6 +191,8 @@
 			children = (
 				FA47AB54218EB29A0048200A /* VideoListCell.swift */,
 				FA47AB55218EB29A0048200A /* VideoListCell.xib */,
+				FAC1385E21A42F3800CF9E63 /* LoadingCell.swift */,
+				FAC1385F21A42F3800CF9E63 /* LoadingCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -304,6 +310,7 @@
 				FA4F012D215A1E6800516A3C /* Frameworks */,
 				FA4F012E215A1E6800516A3C /* Resources */,
 				52B949506861A890B3FE2770 /* [CP] Embed Pods Frameworks */,
+				FAC1385D21A4259700CF9E63 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -402,6 +409,7 @@
 			files = (
 				FA4F013E215A1E6900516A3C /* LaunchScreen.storyboard in Resources */,
 				FA435B53219E9FCF005E097D /* RatingView.xib in Resources */,
+				FAC1386121A42F3800CF9E63 /* LoadingCell.xib in Resources */,
 				FA47AB57218EB29A0048200A /* VideoListCell.xib in Resources */,
 				FA4F013B215A1E6900516A3C /* Assets.xcassets in Resources */,
 				FA4F0139215A1E6800516A3C /* Main.storyboard in Resources */,
@@ -499,6 +507,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FAC1385D21A4259700CF9E63 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -510,6 +535,7 @@
 				FACB1BE0218C663F0080DE07 /* MovieInfo.swift in Sources */,
 				FA47AB56218EB29A0048200A /* VideoListCell.swift in Sources */,
 				FA435B51219E9F9C005E097D /* RatingView.swift in Sources */,
+				FAC1386021A42F3800CF9E63 /* LoadingCell.swift in Sources */,
 				FA435B4D219E9EE4005E097D /* NSDateFormatter.swift in Sources */,
 				FA7D5F79215B72C900F68F44 /* DataManager.swift in Sources */,
 				FA47AB52218EB1430048200A /* VideoListController.swift in Sources */,

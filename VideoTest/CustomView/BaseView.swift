@@ -6,7 +6,6 @@
 //  Copyright © 2018 Екатерина Протасова. All rights reserved.
 //
 
-
 import UIKit
 
 class BaseView: UIView {
