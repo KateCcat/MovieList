@@ -27,6 +27,14 @@ class ApiManager {
                 completion(response.result.value, response.result.error)
         }
     }
+
+    func searchMovie(params: [String: Any], completion: @escaping DataCompletion) {
+        manager.request(Router.searchMovie(params))
+            .validate(statusCode: 200..<300)
+            .responseData { response in
+                completion(response.result.value, response.result.error)
+        }
+    }
 }
 
 open class MyServerTrustPolicyManager: ServerTrustPolicyManager {

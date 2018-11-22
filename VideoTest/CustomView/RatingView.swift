@@ -15,7 +15,7 @@ class RatingView: BaseView {
     var ratingInt: Int = 0 {
         didSet {
             if ratingInt > 10 {
-                ratingInt = 10
+                ratingInt = 9
             }
             for index in 0...ratingInt {
                 starsImageView[index].image = UIImage(named: "StarFull")

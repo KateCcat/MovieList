@@ -12,6 +12,7 @@ import Alamofire
 enum Router: URLRequestConvertible {
 
     case getAllVideo([String: Any])
+    case searchMovie([String: Any])
 
     #if DEBUG
     static let baseURL = "https://api.themoviedb.org/3"
@@ -30,6 +31,8 @@ enum Router: URLRequestConvertible {
         switch self {
         case .getAllVideo:
             return .get
+        case .searchMovie:
+            return .get
         }
     }
 
@@ -38,6 +41,8 @@ enum Router: URLRequestConvertible {
 
         case .getAllVideo:
             return "/discover/movie/"
+        case .searchMovie:
+            return "/search/movie/"
         }
     }
 
@@ -48,6 +53,8 @@ enum Router: URLRequestConvertible {
         var request = try URLRequest(url: requestUrl!, method: method)
         switch self {
         case .getAllVideo(let params):
+            request = try urlEncoder.encode(request, with: params)
+        case .searchMovie(let params):
             request = try urlEncoder.encode(request, with: params)
         }
         return request
